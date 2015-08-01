@@ -96,11 +96,11 @@ $(".uni-header").prepend("\
 			<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
 			</a>\
 			<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-			  <? if (Wrapper::isUserLoggedIn()) { ?>
+			  <? if (Wrapper::isUserLoggedIn(): ?>
 				<li>\
 					<a href=\"http://connect.mymagic.my/logout?redirect_uri=<?= Wrapper::$client_url ?>\">Logout</a>\
 				</li>\
-			  <? } ?>
+			  <? endif; ?>
 			</ul>\
 		</li>\
 		<?php endif; ?>
