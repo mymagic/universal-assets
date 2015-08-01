@@ -1,5 +1,5 @@
-#MaGIC Universal Header Bar (centralize)
-By embedding a js file inside your html file, you can automatically add MaGIC universal header bar to it.
+#MaGIC Universal Header Bar
+By embedding a js file inside your html file, you can automatically add MaGIC universal header bar to it. This bar is centralize so any changes to it will automatically reflect at all pages.
 
 ## Getting Started
 
