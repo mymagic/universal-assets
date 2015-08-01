@@ -97,7 +97,7 @@ $(".uni-header").prepend("\
 			<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
 			  <? if (Wrapper::isUserLoggedIn()): ?>
 				<li>\
-					<a href=\"http://connect.mymagic.my/logout?redirect_uri=<?= Wrapper::$client_url ?>\">Logout</a>\
+					<a href=\"http://connect.mymagic.my/logout?redirect_uri=\"" + encodeURI(window.location.href) + ">Logout</a>\
 				</li>\
 			  <? endif; ?>
 			</ul>\
