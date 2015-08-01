@@ -49,7 +49,7 @@ $(".uni-header").prepend("\
     <div class=\"collapse navbar-collapse\" id=\"uni-header-collapse\">\
 	<ul class=\"nav navbar-nav\">\
 		<li>\
-			<a href=\"http://www.mymagic.my\">\
+			<a href=\"http://test.mymagic.my\">\
 			<span class=\"glyphicon glyphicon-home\"></span> MaGIC\
 			</a>\
 		</li>\
@@ -97,7 +97,7 @@ $(".uni-header").prepend("\
 			<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
 			  <? if (Wrapper::isUserLoggedIn()): ?>
 				<li>\
-					<a href=\"http://connect.mymagic.my/logout?redirect_uri=\"" + encodeURI(window.location.href) + ">Logout</a>\
+					<a href=\"http://connect.mymagic.my/logout?redirect_uri=" + encodeURI(window.location.href) + "\">Logout</a>\
 				</li>\
 			  <? endif; ?>
 			</ul>\
@@ -107,3 +107,10 @@ $(".uni-header").prepend("\
     </div>\
   </div>\
 ");
+
+var re = new RegExp("(http:\/\/)?" + window.location.host);
+var currentMenuItem = $("a[href=\'http://" + window.location.host + "']");
+
+if (re.test(currentMenuItem.prop("href"))) {
+  currentMenuItem.parent().addClass("current-menu-item");
+}
