@@ -28,7 +28,6 @@ function checkStyleSheet(url)
 }
 
 // load external css for color-bar and uni-header
-checkStyleSheet('http://www.mymagic.my/universal-assets/css/bootstrap-social.css');
 checkStyleSheet('http://www.mymagic.my/universal-assets/css/universal-style.css');
 
 // auto create color-bar and uni-header if tag not found
