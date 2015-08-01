@@ -1,3 +1,2 @@
-#RewriteEngine Off
 RewriteEngine on
 RewriteRule ^uniheader.js$ uniheader.js.php
