@@ -1,4 +1,4 @@
-#MaGIC Universal Header Bar
+#MaGIC Universal Header Bar (centralize)
 ## Getting Started
 
 ```
