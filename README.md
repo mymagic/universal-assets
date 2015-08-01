@@ -1,10 +1,10 @@
-# Getting Started
+## Getting Started
 
 ```
 composer install
 ```
 
-# Requirements
+## Requirements
 Assume you already have the standard Bootstrap v3.3.5 includes (javascript & css)
 
 ```html
@@ -18,6 +18,8 @@ Assume you already have the standard Bootstrap v3.3.5 includes (javascript & css
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 ```
+
+## How to use
 All you need to do is add this javascript file.
 Ref: _test/withoutHeader.htm
 ```html
