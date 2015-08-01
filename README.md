@@ -1,3 +1,4 @@
+#MaGIC Universal Header Bar
 ## Getting Started
 
 ```
