@@ -46,8 +46,9 @@ Ref: _test/withHeader.htm
 </body>
 ```
 
-You can further customize how universal bar works by pass in the _muh.config
+You can further customize how universal bar works by pass in the _muh.config after included the header file.
 ```html
+<script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
 <script type="text/javascript">
 	// set the selected top level menu item
     _muh.config.selectedMenu1 = 'accelerator';
