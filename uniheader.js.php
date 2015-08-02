@@ -58,7 +58,7 @@ _muh.render =  function()
 		<div class=\"collapse navbar-collapse\" id=\"uni-header-collapse\">\
 		<ul class=\"nav navbar-nav\">\
 			<li data-menu1=\"magic\">\
-				<a href=\"http://test.mymagic.my\">\
+				<a href=\"http://www.mymagic.my\">\
 				<span class=\"glyphicon glyphicon-home\"></span> MaGIC\
 				</a>\
 			</li>\
