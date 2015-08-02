@@ -10,8 +10,17 @@
 
 
 <body style="padding:0; margin:0">
-flash msg...
 <div class="color-bar"></div><div class="uni-header"></div>
 
 <script src="/magic_uniheader/uniheader.js"></script>
+<script type="text/javascript">
+	// set the selected top level menu item
+    _muh.config.selectedMenu1 = 'accelerator';
+	// disable account dropdown (in case the application using this header havent integrate with connect yet), will just show as a link to connect
+    _muh.config.disableAccount = true;
+	// set current url in case we dont want use javascript auto detection. this will be pass to connect as redirect_uri.
+    _muh.config.currentUrl = 'http://atasbe.mymagic.my';
+	// always remember to call the render() function after done with the setting.
+	_muh.render();
+</script>
 </body>
