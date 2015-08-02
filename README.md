@@ -69,3 +69,4 @@ You can further customize how universal bar works by pass in the _muh.config aft
   - central
   - se
   - impact
+  - account
