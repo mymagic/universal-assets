@@ -46,3 +46,27 @@ Ref: _test/withHeader.htm
 </body>
 ```
 
+You can further customize how universal bar works by pass in the _muh.config after included the uniheader.js file.
+```html
+<script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
+<script type="text/javascript">
+	// set the selected top level menu item
+    _muh.config.selectedMenu1 = 'accelerator';
+	// disable account dropdown (in case the application using this header havent integrate with connect yet), will just show as a link to connect
+    _muh.config.disableAccount = true;
+	// set current url in case we dont want use javascript auto detection. this will be pass to connect as redirect_uri.
+    _muh.config.currentUrl = 'http://atasbe.mymagic.my';
+	// always remember to call the render() function after done with the setting.
+	_muh.render();
+</script>
+```
+
+## selectedMenu1 code:
+  - magic
+  - academy
+  - accelerator
+  - global
+  - central
+  - se
+  - impact
+  - account
