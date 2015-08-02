@@ -59,10 +59,10 @@ $(".uni-header").prepend("\
 		<li class=\"dropdown\">\
 			<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Accelerator <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span></a>\
 			<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-				<li><a href=\"http://acelerator.mymagic.my\">Home</a></li>\
-				<li><a href=\"http://acelerator.mymagic.my/en/asean\">ASEAN</a></li>\
-				<li><a href=\"http://acelerator.mymagic.my/en/se\">SE</a></li>\
-				<li><a href=\"http://acelerator.mymagic.my/en/distrodojo\">Distro Dojo</a></li>\
+				<li><a href=\"http://accelerator.mymagic.my\">Home</a></li>\
+				<li><a href=\"http://accelerator.mymagic.my/en/asean\">ASEAN</a></li>\
+				<li><a href=\"http://accelerator.mymagic.my/en/se\">SE</a></li>\
+				<li><a href=\"http://accelerator.mymagic.my/en/distrodojo\">Distro Dojo</a></li>\
 			</ul>\
 		</li>\
 		<li>\
