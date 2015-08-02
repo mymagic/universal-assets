@@ -46,7 +46,7 @@ Ref: _test/withHeader.htm
 </body>
 ```
 
-You can further customize how universal bar works by pass in the _muh.config after included the header file.
+You can further customize how universal bar works by pass in the _muh.config after included the uniheader.js file.
 ```html
 <script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
 <script type="text/javascript">
