@@ -107,7 +107,7 @@ You may pass in custom configuration too.
 Ref: _text/withConfig.htm
 
 ```html
-<script src="/magic_uniheader/unifooter.js"></script>
+<script src="http://www.mymagic.my/universal-assets/unifooter.js"></script>
 <script type="text/javascript">
   // force to load font awesome from cdn
   _muf.config.isForceFAEnabled = true
