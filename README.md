@@ -7,6 +7,12 @@ By embedding a js file inside your html file, you can automatically add MaGIC un
 composer install
 ```
 
+## Server Setup
+Remember to disable cloud flare cache to the directory using page rule：
+```
+*mymagic.my/universal-assets/*
+```
+
 ## Requirements
 Assume you already have the standard Bootstrap v3.3.5 includes (javascript & css)
 
