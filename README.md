@@ -23,8 +23,9 @@ Assume you already have the standard Bootstrap v3.3.5 includes (javascript & css
 ```
 
 ## How to use
+### Header bar
 All you need to do is add this javascript file.
-Ref: _test/withoutHeader.htm
+Ref: _test/withoutTarget.htm
 ```html
 <body style="padding:0; margin:0">
   <!-- add this line -->
@@ -34,7 +35,7 @@ Ref: _test/withoutHeader.htm
 ```
 
 In case the universal bar is not the top element of your webpage (eg: have flash notification), you may wanto override the auto setting by specified your own tag.
-Ref: _test/withHeader.htm
+Ref: _test/withTarget.htm
 
 ```html
 <body style="padding:0; margin:0">
@@ -47,6 +48,7 @@ Ref: _test/withHeader.htm
 ```
 
 You can further customize how universal bar works by pass in the _muh.config after included the uniheader.js file.
+Ref: _test/withConfig.htm
 ```html
 <script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
 <script type="text/javascript">
@@ -61,7 +63,7 @@ You can further customize how universal bar works by pass in the _muh.config aft
 </script>
 ```
 
-## selectedMenu1 code:
+#### selectedMenu1 code:
   - magic
   - academy
   - accelerator
@@ -70,3 +72,15 @@ You can further customize how universal bar works by pass in the _muh.config aft
   - se
   - impact
   - account
+
+### Footer bar
+Including a universal footer is just exactly the same with header bar. 
+Except, it expect fontawesome is included. 
+
+```html
+<!-- fontawesome is required for footer -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+```
+
+
+
