@@ -74,13 +74,44 @@ Ref: _test/withConfig.htm
   - account
 
 ### Footer bar
-Including a universal footer is just exactly the same with header bar. 
+Including a universal footer is just almost the same with header bar. 
 Except, it expect fontawesome is included. 
 
 ```html
 <!-- fontawesome is required for footer -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 ```
+All you need to do is add this javascript file.
+Ref: _test/withoutTarget.htm
+<body style="padding:0; margin:0">
+  <!-- add this line -->
+  <script src="http://www.mymagic.my/universal-assets/unifooter.js"></script>
+  <!-- /add this line -->
+</body>
 
+In case you wanto customize the footer bar by specify your own tag.
+Ref: _test/withTarget.htm
 
+```html
+<body style="padding:0; margin:0">
+  <!-- add these line -->
+  <footer class="uni-footer"></footer>
+  <script src="http://www.mymagic.my/universal-assets/unifooter.js"></script>
+  <!-- /add these line -->
+  
+  <div>something else here.</div>
+</body>
+```
 
+You may pass in custom configuration too.
+Ref: _text/withConfig.htm
+
+```html
+<script src="/magic_uniheader/unifooter.js"></script>
+<script type="text/javascript">
+  // force to load font awesome from cdn
+  _muf.config.isForceFAEnabled = true
+  // always remember to call the render() function after done with the setting.
+  _muf.render();
+</script>
+```
