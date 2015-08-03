@@ -15,6 +15,7 @@
 var _muh = _muh || {};
 
 _muh.config = {};
+_muh.config.isDebug = false;
 	
 _muh.checkStyleSheet = function(url)
 {
@@ -37,7 +38,14 @@ _muh.render =  function()
 	if(_muh.config.currentUrl == null) _muh.config.currentUrl = window.location.href;
 	
 	// load external css for color-bar and uni-header
-	_muh.checkStyleSheet('http://www.mymagic.my/universal-assets/css/universal-style.css');
+	if(_muh.config.isDebug)
+	{
+		_muh.checkStyleSheet('../css/universal-style.css');
+	}
+	else
+	{
+		_muh.checkStyleSheet('http://www.mymagic.my/universal-assets/css/universal-style.css');
+	}
 
 	// auto create color-bar and uni-header if tag not found
 	if( !$('.color-bar').length && !$('.uni-header').length )
@@ -88,7 +96,7 @@ _muh.render =  function()
 			</li>\
 		  </ul>\
 		 <ul class=\"nav navbar-nav navbar-right border-line\">\
-			<li class=\"dropdown\">\
+			<li class=\"dropdown\" data-menu1=\"language\">\
 				<a href=\"http://www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">EN <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
 				</a>\
 				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
@@ -138,6 +146,10 @@ _muh.render =  function()
 		$('.uni-header li[data-menu1="account"] a').removeClass('dropdown-toggle').removeAttr('data-toggle');
 		$('.uni-header li[data-menu1="account"] span.glyphicon').hide();
 		$('.uni-header li[data-menu1="account"] ul').hide();
+	}
+	
+	if(_muh.config && _muh.config.disableLanguage == true){
+		$('.uni-header li[data-menu1="language"]').hide();
 	}
 
 }
