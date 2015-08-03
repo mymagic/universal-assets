@@ -83,11 +83,13 @@ Except, it expect fontawesome is included.
 ```
 All you need to do is add this javascript file.
 Ref: _test/withoutTarget.htm
+``` html
 <body style="padding:0; margin:0">
   <!-- add this line -->
   <script src="http://www.mymagic.my/universal-assets/unifooter.js"></script>
   <!-- /add this line -->
 </body>
+```
 
 In case you wanto customize the footer bar by specify your own tag.
 Ref: _test/withTarget.htm
