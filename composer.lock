@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a80dbc9b85a35f1cd4dd91b7afb42a25",
+    "hash": "138d32acc1248653dbaced7237fca676",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -183,12 +183,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:mymagic/connect-wrapper.git",
-                "reference": "8741aaccc708b8ac49d3f3ecd8f395fd7fefe123"
+                "reference": "e6b86fd26a90fddd97d1724d4b223285fe629ea8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mymagic/connect-wrapper/zipball/8741aaccc708b8ac49d3f3ecd8f395fd7fefe123",
-                "reference": "8741aaccc708b8ac49d3f3ecd8f395fd7fefe123",
+                "url": "https://api.github.com/repos/mymagic/connect-wrapper/zipball/e6b86fd26a90fddd97d1724d4b223285fe629ea8",
+                "reference": "e6b86fd26a90fddd97d1724d4b223285fe629ea8",
                 "shasum": ""
             },
             "require": {
@@ -208,10 +208,10 @@
             ],
             "description": "MaGIC Connect API wrapper",
             "support": {
-                "source": "https://github.com/mymagic/connect-wrapper/tree/master",
+                "source": "https://github.com/mymagic/connect-wrapper/tree/v2.0",
                 "issues": "https://github.com/mymagic/connect-wrapper/issues"
             },
-            "time": "2015-07-31 11:55:54"
+            "time": "2015-08-12 18:38:44"
         },
         {
             "name": "psr/http-message",
