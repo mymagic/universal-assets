@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-        "mymagic/connect": "dev-master"
+        "mymagic/connect": "dev-master#v1.0"
     },
     "repositories": [
         {
