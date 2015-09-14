@@ -1,5 +1,5 @@
 .color-bar {
-  background: url("http://www.mymagic.my/universal-assets/images/color-bar.jpg") repeat-x red;
+  background: url("//www.mymagic.my/universal-assets/images/color-bar.jpg") repeat-x red;
   height: 3px;
 }
 .uni-header .navbar-nav > .current-menu-item > a, .uni-header .navbar-default .navbar-nav > .current-menu-item > a:hover, .uni-header .navbar-default .navbar-nav > .current-menu-item > a:focus {
