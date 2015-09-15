@@ -88,7 +88,7 @@ _muf.render =  function()
 			<a href=\"https://www.youtube.com/channel/UCIT_ihmWh5f3MCobvEwWMaA\" target=\"_blank\"><button class=\"btn btn-circle btn-md btn-google-plus btn-gray-override\">&nbsp;<i class=\"fa fa-youtube\">&nbsp;</i></button></a>\
 		</div>\
 		<div class=\"col-md-6 policy\">\
-			<h6><a href=\"//www.mymagic.my/privacy-policy\">Privacy Policy</a> | Initiated by M.O.F.</h6>\
+			<h6><a href=\"//mymagic.my/terms-of-use\">Terms of use</a> | <a href=\"http://mymagic.my/privacy-policy\">Privacy Policy</a> | Initiated by M.O.F.</h6>\
 		</div>\
 	</div>\
 	</div>"

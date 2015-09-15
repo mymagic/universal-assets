@@ -1,3 +1,5 @@
 RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^uniheader.js$ uniheader.js.php
 RewriteRule ^unifooter.js$ unifooter.js.php
