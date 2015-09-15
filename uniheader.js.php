@@ -44,7 +44,7 @@ _muh.render =  function()
 	}
 	else
 	{
-		_muh.checkStyleSheet('http://www.mymagic.my/universal-assets/css/universal-style.css');
+		_muh.checkStyleSheet('http://mymagic.my/universal-assets/css/universal-style.css');
 	}
 
 	// auto create color-bar and uni-header if tag not found
@@ -66,7 +66,7 @@ _muh.render =  function()
 		<div class=\"collapse navbar-collapse\" id=\"uni-header-collapse\">\
 		<ul class=\"nav navbar-nav\">\
 			<li data-menu1=\"magic\">\
-				<a href=\"http://www.mymagic.my\">\
+				<a href=\"http://mymagic.my\">\
 				<span class=\"glyphicon glyphicon-home\"></span> MaGIC\
 				</a>\
 			</li>\
@@ -97,10 +97,10 @@ _muh.render =  function()
 		  </ul>\
 		 <ul class=\"nav navbar-nav navbar-right border-line\">\
 			<li class=\"dropdown\" data-menu1=\"language\">\
-				<a href=\"http://www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">EN <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
+				<a href=\"http://mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">EN <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
 				</a>\
 				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-					<li><a href=\"http://www.mymagic.my/ms\">Bahasa Melayu</a></li>\
+					<li><a href=\"http://mymagic.my/ms\">Bahasa Melayu</a></li>\
 				</ul>\
 			</li>\
 			<?php if(!$connectOk): ?>

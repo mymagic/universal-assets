@@ -54,18 +54,18 @@ _muf.render =  function()
 		</div>\
 		<div class=\"menu\">\
 			<ul class=\"footer-nav\">\
-				<li><a href=\"http://www.mymagic.my/about\">ABOUT</a></li>\
-				<li><a href=\"http://www.mymagic.my/community\">COMMUNITY</a></li>\
-				<li><a href=\"http://www.mymagic.my/programs\">PROGRAMS</a></li>\
-				<li><a href=\"http://www.mymagic.my/events\">EVENTS</a></li>\
+				<li><a href=\"http://mymagic.my/about\">ABOUT</a></li>\
+				<li><a href=\"http://mymagic.my/community\">COMMUNITY</a></li>\
+				<li><a href=\"http://mymagic.my/programs\">PROGRAMS</a></li>\
+				<li><a href=\"http://mymagic.my/events\">EVENTS</a></li>\
 			</ul>\
 		</div>\
 		<div class=\"menu\">\
 			<ul class=\"footer-nav\">\
-				<li><a href=\"http://www.mymagic.my/newsletter\">NEWSLETTER</a></li>\
-				<li><a href=\"http://www.mymagic.my/news\">NEWS</a></li>\
-				<li><a href=\"http://www.mymagic.my/jobs\">JOBS</a></li>\
-				<li><a href=\"http://www.mymagic.my/contact\">CONTACT</a></li>\
+				<li><a href=\"http://mymagic.my/newsletter\">NEWSLETTER</a></li>\
+				<li><a href=\"http://mymagic.my/news\">NEWS</a></li>\
+				<li><a href=\"http://mymagic.my/jobs\">JOBS</a></li>\
+				<li><a href=\"http://mymagic.my/contact\">CONTACT</a></li>\
 			</ul>\
 		</div>\
 		<div class=\"menu\">\
@@ -88,7 +88,7 @@ _muf.render =  function()
 			<a href=\"https://www.youtube.com/channel/UCIT_ihmWh5f3MCobvEwWMaA\" target=\"_blank\"><button class=\"btn btn-circle btn-md btn-google-plus btn-gray-override\">&nbsp;<i class=\"fa fa-youtube\">&nbsp;</i></button></a>\
 		</div>\
 		<div class=\"col-md-6 policy\">\
-			<h6><a href=\"http://www.mymagic.my/privacy-policy\">Privacy Policy</a> | Initiated by M.O.F.</h6>\
+			<h6><a href=\"http://mymagic.my/terms-of-use\">Terms of use</a> | <a href=\"http://mymagic.my/privacy-policy\">Privacy Policy</a> | Initiated by M.O.F.</h6>\
 		</div>\
 	</div>\
 	</div>"
