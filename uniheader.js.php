@@ -91,6 +91,9 @@ _muh.render =  function()
 			<li data-menu1=\"se\">\
 				<a href=\"http://se.mymagic.my\">SE</a>\
 			</li>\
+            <li data-menu1=\"1AES\">\
+				<a href=\"http://mymagic.my/en/1aes\">1AES</a>\
+			</li>\
 			<li data-menu1=\"impact\">\
 				<a href=\"http://impact.mymagic.my\">Impact</a>\
 			</li>\
