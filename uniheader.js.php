@@ -33,6 +33,50 @@ _muh.checkStyleSheet = function(url)
    }
 }
 
+	
+// define urls here
+var urls = []; 
+urls['magic'] = []; urls['magic']['default'] = '//www.mymagic.my'; urls['magic']['en'] = '//www.mymagic.my/en'; urls['magic']['ms'] = '//www.mymagic.my/ms';
+urls['accelerator-home'] = []; urls['accelerator-home']['default'] = '//accelerator.mymagic.my'; urls['accelerator-home']['en'] = '//accelerator.mymagic.my/en'; urls['accelerator-home']['ms'] = '//accelerator.mymagic.my/ms';
+urls['accelerator-asean'] = []; urls['accelerator-asean']['default'] = '//accelerator.mymagic.my/asean'; urls['accelerator-asean']['en'] = '//accelerator.mymagic.my/asean/en'; urls['accelerator-asean']['ms'] = '//accelerator.mymagic.my/asean/ms';
+urls['accelerator-se'] = []; urls['accelerator-se']['default'] = '//accelerator.mymagic.my/se'; urls['accelerator-se']['en'] = '//accelerator.mymagic.my/se/en'; urls['accelerator-se']['ms'] = '//accelerator.mymagic.my/se/ms';
+urls['accelerator-distroDojo'] = []; urls['accelerator-distroDojo']['default'] = '//accelerator.mymagic.my/distrodojo'; urls['accelerator-distroDojo']['en'] = '//accelerator.mymagic.my/distrodojo/en'; urls['accelerator-distroDojo']['ms'] = '//accelerator.mymagic.my/distrodojo/ms';
+urls['global'] = []; urls['global']['default'] = '//global.mymagic.my'; urls['global']['en'] = '//global.mymagic.my/en'; urls['global']['ms'] = '//global.mymagic.my/ms';
+urls['central'] = []; urls['central']['default'] = '//central.mymagic.my'; urls['central']['en'] = '//central.mymagic.my/en'; urls['central']['ms'] = '//central.mymagic.my/ms';
+urls['se'] = []; urls['se']['default'] = '//se.mymagic.my'; urls['se']['en'] = '//se.mymagic.my/en'; urls['se']['ms'] = '//se.mymagic.my/ms';
+urls['ace'] = []; urls['ace']['default'] = '//ace.mymagic.my'; urls['ace']['en'] = '//ace.mymagic.my/en'; urls['ace']['ms'] = '//ace.mymagic.my/ms';
+urls['impact'] = []; urls['impact']['default'] = '//impact.mymagic.my'; urls['impact']['en'] = '//impact.mymagic.my/en'; urls['impact']['ms'] = '//impact.mymagic.my/ms';
+_muh.urls = urls;
+
+_muh.setLanguage = function(lang)
+{
+	lang = typeof lang !== 'undefined' ? lang : 'en';	
+	for (var urlKey in _muh.urls)
+	{
+		var url = urls[lang];
+		$(".uni-header").find('a[data-url-code="'+urlKey+'"]').prop('href', _muh.urls[urlKey][lang]);
+	}
+	
+	var langMenuHtml = '<a href=\"//www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
+		English <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
+	</a>\
+	<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
+		<li><a href=\"//www.mymagic.my/ms\">Bahasa Melayu</a></li>\
+	</ul>';
+	
+	if(lang == 'ms')
+	{
+		langMenuHtml = '<a href=\"//www.mymagic.my/ms\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
+			Bahasa Melayu <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
+		</a>\
+		<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
+			<li><a href=\"//www.mymagic.my/en\">English</a></li>\
+		</ul>';
+	}
+	
+	$('.uni-header').find('li[data-menu1="language"]').html(langMenuHtml);
+}
+
 _muh.render =  function()
 {
 	if(_muh.config.currentUrl == null) _muh.config.currentUrl = window.location.href;
@@ -66,48 +110,40 @@ _muh.render =  function()
 		<div class=\"collapse navbar-collapse\" id=\"uni-header-collapse\">\
 		<ul class=\"nav navbar-nav\">\
 			<li data-menu1=\"magic\">\
-				<a href=\"//www.mymagic.my\">\
+				<a href=\"//www.mymagic.my\" data-url-code=\"magic\">\
 				<span class=\"glyphicon glyphicon-home\"></span> MaGIC\
 				</a>\
 			</li>\
 			<li data-menu1=\"academy\">\
-				<a href=\"//academy.mymagic.my\">Academy</a>\
+				<a href=\"//academy.mymagic.my\" data-url-code=\"academy\">Academy</a>\
 			</li>\
 			<li class=\"dropdown\" data-menu1=\"accelerator\">\
 				<a href=\"#\" class=\"dropdown-toggle \" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Accelerator <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span></a>\
 				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-					<li data-menu2=\"home\"><a href=\"//accelerator.mymagic.my\">Home</a></li>\
-					<li data-menu2=\"asean\"><a href=\"//accelerator.mymagic.my/en/asean\">ASEAN</a></li>\
-					<li data-menu2=\"se\"><a href=\"//accelerator.mymagic.my/en/se\">SE</a></li>\
-					<li data-menu2=\"distroDojo\"><a href=\"//accelerator.mymagic.my/en/distrodojo\">Distro Dojo</a></li>\
+					<li data-menu2=\"home\"><a href=\"//accelerator.mymagic.my\" data-url-code=\"accelerator-home\">Home</a></li>\
+					<li data-menu2=\"asean\"><a href=\"//accelerator.mymagic.my/en/asean\"  data-url-code=\"accelerator-asean\">ASEAN</a></li>\
+					<li data-menu2=\"se\"><a href=\"//accelerator.mymagic.my/en/se\"  data-url-code=\"accelerator-se\">SE</a></li>\
+					<li data-menu2=\"distroDojo\"><a href=\"//accelerator.mymagic.my/en/distrodojo\" data-url-code=\"accelerator-distroDojo\">Distro Dojo</a></li>\
 				</ul>\
 			</li>\
 			<li data-menu1=\"global\">\
-				<a href=\"//global.mymagic.my\">Global</a>\
+				<a href=\"//global.mymagic.my\" data-url-code=\"global\">Global</a>\
 			</li>\
 			<li data-menu1=\"central\">\
-				<a href=\"//central.mymagic.my\">Central</a>\
+				<a href=\"//central.mymagic.my\" data-url-code=\"central\">Central</a>\
 			</li>\
 			<li data-menu1=\"se\">\
-				<a href=\"//se.mymagic.my\">SE</a>\
+				<a href=\"//se.mymagic.my\" data-url-code=\"se\">SE</a>\
 			</li>\
 			<li data-menu1=\"ACE\">\
-				<a href=\"http://ace.mymagic.my\">ACE</a>\
-			</li>\
-			<li data-menu1=\"1AES\">\
-				<a href=\"http://mymagic.my/en/1aes\">1AES</a>\
+				<a href=\"http://ace.mymagic.my\" data-url-code=\"ace\">ACE</a>\
 			</li>\
 			<li data-menu1=\"impact\">\
-				<a href=\"//impact.mymagic.my\">Impact</a>\
+				<a href=\"//impact.mymagic.my\"  data-url-code=\"impact\">Impact</a>\
 			</li>\
 		  </ul>\
 		 <ul class=\"nav navbar-nav navbar-right border-line\">\
 			<li class=\"dropdown\" data-menu1=\"language\">\
-				<a href=\"//www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">EN <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
-				</a>\
-				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-					<li><a href=\"//www.mymagic.my/ms\">Bahasa Melayu</a></li>\
-				</ul>\
 			</li>\
 			<?php if(!$connectOk): ?>
 				<li data-menu1=\"account\">\
@@ -136,7 +172,7 @@ _muh.render =  function()
 
 	var re = new RegExp("(http:\/\/)?" + window.location.host);
 	var currentMenuItem = $("a[href=\'//" + window.location.host + "']");
-
+	
 	if (re.test(currentMenuItem.prop("href"))) {
 	  currentMenuItem.parent().addClass("current-menu-item");
 	}
