@@ -38,8 +38,8 @@ _muh.checkStyleSheet = function(url)
 var urls = []; 
 urls['magic'] = []; urls['magic']['default'] = '//www.mymagic.my'; urls['magic']['en'] = '//www.mymagic.my/en'; urls['magic']['ms'] = '//www.mymagic.my/ms';
 urls['accelerator-home'] = []; urls['accelerator-home']['default'] = '//accelerator.mymagic.my'; urls['accelerator-home']['en'] = '//accelerator.mymagic.my/en'; urls['accelerator-home']['ms'] = '//accelerator.mymagic.my/ms';
-urls['accelerator-asean'] = []; urls['accelerator-asean']['default'] = '//accelerator.mymagic.my/asean'; urls['accelerator-asean']['en'] = '//accelerator.mymagic.my/asean/en'; urls['accelerator-asean']['ms'] = '//accelerator.mymagic.my/asean/ms';
-urls['accelerator-se'] = []; urls['accelerator-se']['default'] = '//accelerator.mymagic.my/se'; urls['accelerator-se']['en'] = '//accelerator.mymagic.my/se/en'; urls['accelerator-se']['ms'] = '//accelerator.mymagic.my/se/ms';
+urls['accelerator-asean'] = []; urls['accelerator-asean']['default'] = '//accelerator.mymagic.my/asean'; urls['accelerator-asean']['en'] = '//accelerator.mymagic.my/en/asean/'; urls['accelerator-asean']['ms'] = '//accelerator.mymagic.my/ms/asean/';
+urls['accelerator-se'] = []; urls['accelerator-se']['default'] = '//accelerator.mymagic.my/se'; urls['accelerator-se']['en'] = '//accelerator.mymagic.my/en/se/'; urls['accelerator-se']['ms'] = '//accelerator.mymagic.my/ms/se/';
 urls['accelerator-distroDojo'] = []; urls['accelerator-distroDojo']['default'] = '//accelerator.mymagic.my/distrodojo'; urls['accelerator-distroDojo']['en'] = '//accelerator.mymagic.my/en/distrodojo/'; urls['accelerator-distroDojo']['ms'] = '//accelerator.mymagic.my/ms/distrodojo/';
 urls['global'] = []; urls['global']['default'] = '//global.mymagic.my'; urls['global']['en'] = '//global.mymagic.my/en'; urls['global']['ms'] = '//global.mymagic.my/ms';
 urls['central'] = []; urls['central']['default'] = '//central.mymagic.my'; urls['central']['en'] = '//central.mymagic.my/en'; urls['central']['ms'] = '//central.mymagic.my/ms';
