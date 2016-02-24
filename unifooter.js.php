@@ -69,6 +69,15 @@ _muf.render =  function()
 			</ul>\
 		</div>\
 		<div class=\"menu\">\
+			<ul class=\"footer-nav\">\
+				<li><a href=\"//www.startupdb.asia\">StartupDB</a></li>\
+				<li><a href=\"//jomstartup.mymagic.my\">JomStartup</a></li>\
+				<li><a href=\"//profile.mymagic.my\">Profile</a></li>\
+				<li><a href=\"//atasbe.mymagic.my\">ATAS</a></li>\
+				<li><a href=\"//dashboard.mymagic.my\">Dashboard</a></li>\
+			</ul>\
+		</div>\
+		<div class=\"menu\">\
 			<ul class=\"footer-nav\"></ul>\
 		</div>\
 		<div class=\"footer-address\">\

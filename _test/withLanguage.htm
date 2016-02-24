@@ -1,0 +1,36 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- fontawesome is required for footer -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<body style="padding:0; margin:0">
+<div class="color-bar"></div><div class="uni-header"></div>
+
+<script src="http://studio/magic_uniheader/uniheader.js.php"></script>
+<script type="text/javascript">
+	// set the selected top level menu item
+    _muh.config.selectedMenu1 = 'accelerator';
+	// disable account dropdown (in case the application using this header havent integrate with connect yet), will just show as a link to connect
+    _muh.config.disableAccount = true;
+	// disable language item (in case the application is monolingual)
+    _muh.config.disableLanguage = false;
+    _muh.config.selectedLanguage = 'ms';
+	// set current url in case we dont want use javascript auto detection. this will be pass to connect as redirect_uri.
+    _muh.config.currentUrl = 'http://atasbe.mymagic.my';
+	// always remember to call the render() function after done with the setting.
+	_muh.render();
+	_muh.setLanguage('en');
+</script>
+
+
+<div class="uni-footer"></div>
+<script src="http://studio/magic_uniheader/unifooter.js.php"></script>
+</body>
