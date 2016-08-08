@@ -188,6 +188,7 @@ _muh.render =  function()
 		$('.uni-header li[data-menu1="account"] a').removeClass('dropdown-toggle').removeAttr('data-toggle');
 		$('.uni-header li[data-menu1="account"] span.glyphicon').hide();
 		$('.uni-header li[data-menu1="account"] ul').hide();
+		$('.uni-header li[data-menu1="account"]').hide();
 	}
 	
 	if(_muh.config && _muh.config.disableLanguage == true){
