@@ -54,18 +54,18 @@ _muf.render =  function()
 		</div>\
 		<div class=\"menu\">\
 			<ul class=\"footer-nav\">\
-				<li><a href=\"//mymagic.my/about\">ABOUT</a></li>\
-				<li><a href=\"//mymagic.my/community\">COMMUNITY</a></li>\
-				<li><a href=\"//mymagic.my/programs\">PROGRAMS</a></li>\
-				<li><a href=\"//mymagic.my/events\">EVENTS</a></li>\
+				<li><a href=\"//mymagic.my/about\">About</a></li>\
+				<li><a href=\"//mymagic.my/community\">Community</a></li>\
+				<li><a href=\"//mymagic.my/programs\">Programs</a></li>\
+				<li><a href=\"//mymagic.my/events\">Events</a></li>\
 			</ul>\
 		</div>\
 		<div class=\"menu\">\
 			<ul class=\"footer-nav\">\
-				<li><a href=\"//mymagic.my/newsletter\">NEWSLETTER</a></li>\
-				<li><a href=\"//mymagic.my/news\">NEWS</a></li>\
-				<li><a href=\"//mymagic.my/jobs\">JOBS</a></li>\
-				<li><a href=\"//mymagic.my/contact\">CONTACT</a></li>\
+				<li><a href=\"//mymagic.my/newsletter\">Newsletter</a></li>\
+				<li><a href=\"//mymagic.my/news\">News</a></li>\
+				<li><a href=\"//mymagic.my/jobs\">Job Board</a></li>\
+				<li><a href=\"//mymagic.my/contact\">Contact Us</a></li>\
 			</ul>\
 		</div>\
 		<div class=\"menu\">\
