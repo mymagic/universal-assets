@@ -123,7 +123,7 @@ _muh.render =  function()
 					<li data-menu2=\"home\"><a href=\"//accelerator.mymagic.my\" data-url-code=\"accelerator-home\">Home</a></li>\
 					<li data-menu2=\"asean\"><a href=\"//accelerator.mymagic.my/en/asean\"  data-url-code=\"accelerator-asean\">ASEAN</a></li>\
 					<li data-menu2=\"se\"><a href=\"//accelerator.mymagic.my/en/se\"  data-url-code=\"accelerator-se\">SE</a></li>\
-					<li data-menu2=\"distroDojo\"><a href=\"//accelerator.mymagic.my/en/distrodojo\" data-url-code=\"accelerator-distroDojo\">Distro Dojo</a></li>\
+					<li data-menu2=\"distroDojo\"><a href=\"//accelerator.mymagic.my/en/distro-dojo\" data-url-code=\"accelerator-distroDojo\">Distro Dojo</a></li>\
 				</ul>\
 			</li>\
 			<li data-menu1=\"global\">\
