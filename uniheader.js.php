@@ -1,41 +1,28 @@
-<?php
-	require "vendor/autoload.php";
-	use MyMagic\Connect\Wrapper;
-	$connectOk = false;
-	try
-	{
-		Wrapper::init();
-		$connectOk = true;
-	}
-	catch(Exception $e){}
-	header('Content-Type: application/javascript');
-?>
-
 // create namespace _muh (magic universal header)
 var _muh = _muh || {};
 
 _muh.config = {};
 _muh.config.isDebug = false;
-	
+
 _muh.checkStyleSheet = function(url)
 {
-   var found = false;
-   for(var i = 0; i<document.styleSheets.length; i++){
-	  if(document.styleSheets[i].href==url){
-		  found=true;
-		  break;
-	  }
-   }
-   if(!found){
-	   $('head').append(
-		   $('<link rel="stylesheet" type="text/css" href="' + url + '" />')
-	   );
-   }
+    var found = false;
+    for(var i = 0; i<document.styleSheets.length; i++){
+        if(document.styleSheets[i].href==url){
+            found=true;
+            break;
+        }
+    }
+    if(!found){
+        $('head').append(
+            $('<link rel="stylesheet" type="text/css" href="' + url + '" />')
+        );
+    }
 }
 
-	
+
 // define urls here
-var urls = []; 
+var urls = [];
 urls['magic'] = []; urls['magic']['default'] = '//www.mymagic.my'; urls['magic']['en'] = '//www.mymagic.my/en'; urls['magic']['ms'] = '//www.mymagic.my/ms';
 urls['accelerator-home'] = []; urls['accelerator-home']['default'] = '//accelerator.mymagic.my'; urls['accelerator-home']['en'] = '//accelerator.mymagic.my/en'; urls['accelerator-home']['ms'] = '//accelerator.mymagic.my/ms';
 urls['accelerator-asean'] = []; urls['accelerator-asean']['default'] = '//accelerator.mymagic.my/asean'; urls['accelerator-asean']['en'] = '//accelerator.mymagic.my/en/asean/'; urls['accelerator-asean']['ms'] = '//accelerator.mymagic.my/ms/asean/';
@@ -50,54 +37,54 @@ _muh.urls = urls;
 
 _muh.setLanguage = function(lang)
 {
-	lang = typeof lang !== 'undefined' ? lang : 'en';	
-	for (var urlKey in _muh.urls)
-	{
-		var url = urls[lang];
-		$(".uni-header").find('a[data-url-code="'+urlKey+'"]').prop('href', _muh.urls[urlKey][lang]);
-	}
-	
-	var langMenuHtml = '<a href=\"//www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
+    lang = typeof lang !== 'undefined' ? lang : 'en';
+    for (var urlKey in _muh.urls)
+    {
+        var url = urls[lang];
+        $(".uni-header").find('a[data-url-code="'+urlKey+'"]').prop('href', _muh.urls[urlKey][lang]);
+    }
+
+    var langMenuHtml = '<a href=\"//www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
 		English <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
 	</a>\
 	<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
 		<li><a href=\"//www.mymagic.my/ms\">Bahasa Melayu</a></li>\
 	</ul>';
-	
-	if(lang == 'ms')
-	{
-		langMenuHtml = '<a href=\"//www.mymagic.my/ms\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
+
+    if(lang == 'ms')
+    {
+        langMenuHtml = '<a href=\"//www.mymagic.my/ms\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
 			Bahasa Melayu <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
 		</a>\
 		<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
 			<li><a href=\"//www.mymagic.my/en\">English</a></li>\
 		</ul>';
-	}
-	
-	$('.uni-header').find('li[data-menu1="language"]').html(langMenuHtml);
+    }
+
+    $('.uni-header').find('li[data-menu1="language"]').html(langMenuHtml);
 }
 
 _muh.render =  function()
 {
-	if(_muh.config.currentUrl == null) _muh.config.currentUrl = window.location.href;
-	
-	// load external css for color-bar and uni-header
-	if(_muh.config.isDebug)
-	{
-		_muh.checkStyleSheet('../css/universal-style.css');
-	}
-	else
-	{
-		_muh.checkStyleSheet('//www.mymagic.my/universal-assets/css/universal-style.css');
-	}
+    if(_muh.config.currentUrl == null) _muh.config.currentUrl = window.location.href;
 
-	// auto create color-bar and uni-header if tag not found
-	if( !$('.color-bar').length && !$('.uni-header').length )
-	{
-		$("body").prepend( '<div class="color-bar"></div><div class="uni-header"></div>' );
-	}
-	$(".uni-header").empty();
-	$(".uni-header").prepend("\
+    // load external css for color-bar and uni-header
+    if(_muh.config.isDebug)
+    {
+        _muh.checkStyleSheet('../css/universal-style.css');
+    }
+    else
+    {
+        _muh.checkStyleSheet('//www.mymagic.my/universal-assets/css/universal-style.css');
+    }
+
+    // auto create color-bar and uni-header if tag not found
+    if( !$('.color-bar').length && !$('.uni-header').length )
+    {
+        $("body").prepend( '<div class="color-bar"></div><div class="uni-header"></div>' );
+    }
+    $(".uni-header").empty();
+    $(".uni-header").prepend("\
 	<div class=\"container\">\
 		<div class=\"navbar-header\">\
 			<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#uni-header-collapse\">\
@@ -144,57 +131,54 @@ _muh.render =  function()
 		  </ul>\
 		 <ul class=\"nav navbar-nav navbar-right border-line\">\
 			<li class=\"dropdown\" data-menu1=\"language\">\
-			</li>\
-			<?php if(!$connectOk): ?>
-				<li data-menu1=\"account\">\
+			</li>\ " + ( !_muh.config.isLogin ?
+
+      "  <li data-menu1=\"account\">\
 					<a href=\"//connect.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\">Account</a>\
-				</li>\
-			<?php else: ?>
-			<li class=\"dropdown\" data-menu1=\"account\">\
+				</li>\ " :
+
+ " <li class=\"dropdown\" data-menu1=\"account\">\
 				<a href=\"//connect.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
 				</a>\
 				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-				  <? if (Wrapper::isUserLoggedIn()): ?>
-					<li>\
-						<a href=\"//connect.mymagic.my/profile\">Profile</a>\
-					</li>\
-					<li>\
-						<a href=\"//connect.mymagic.my/logout?redirect_uri=" + encodeURI(_muh.config.currentUrl) + "\">Logout</a>\
-					</li>\
-				  <? endif; ?>
-				</ul>\
-			</li>\
-			<?php endif; ?>
-		 </ul>\
-		</div>\
-	  </div>\
-	");
+<li>\
+						<a href=\"//connect2.mymagic.my/profile\">Profile</a>\
+    </li>\
+    <li>\
+        <a href= \"//" + encodeURI(_muh.config.currentUrl) + "/logout\">Logout</a>\
+    </li>\
+    </ul>\
+    </li>\
+        " ) + " </ul>\
+    </div>\
+    </div>\
+    ");
 
-	var re = new RegExp("(http:\/\/)?" + window.location.host);
-	var currentMenuItem = $("a[href=\'//" + window.location.host + "']");
-	
-	if (re.test(currentMenuItem.prop("href"))) {
-	  currentMenuItem.parent().addClass("current-menu-item");
-	}
-	
-	if(_muh.config && _muh.config.selectedMenu1 != ""){
-		$('.uni-header li').removeClass('current-menu-item');
-		$('.uni-header li[data-menu1="'+_muh.config.selectedMenu1+'"]').addClass('current-menu-item');
-	}
-	
-	if(_muh.config && _muh.config.disableAccount == true)
-	{
-		$('.uni-header li[data-menu1="account"]').removeClass('dropdown');
-		$('.uni-header li[data-menu1="account"] a').removeClass('dropdown-toggle').removeAttr('data-toggle');
-		$('.uni-header li[data-menu1="account"] span.glyphicon').hide();
-		$('.uni-header li[data-menu1="account"] ul').hide();
-		$('.uni-header li[data-menu1="account"]').hide();
-	}
-	
-	if(_muh.config && _muh.config.disableLanguage == true){
-		$('.uni-header li[data-menu1="language"]').hide();
-	}
+    var re = new RegExp("(http:\/\/)?" + window.location.host);
+    var currentMenuItem = $("a[href=\'//" + window.location.host + "']");
 
+    if (re.test(currentMenuItem.prop("href"))) {
+    currentMenuItem.parent().addClass("current-menu-item");
 }
 
-_muh.render();
+    if(_muh.config && _muh.config.selectedMenu1 != ""){
+    $('.uni-header li').removeClass('current-menu-item');
+    $('.uni-header li[data-menu1="'+_muh.config.selectedMenu1+'"]').addClass('current-menu-item');
+}
+
+    if(_muh.config && _muh.config.disableAccount == true)
+    {
+        $('.uni-header li[data-menu1="account"]').removeClass('dropdown');
+        $('.uni-header li[data-menu1="account"] a').removeClass('dropdown-toggle').removeAttr('data-toggle');
+        $('.uni-header li[data-menu1="account"] span.glyphicon').hide();
+        $('.uni-header li[data-menu1="account"] ul').hide();
+        $('.uni-header li[data-menu1="account"]').hide();
+    }
+
+    if(_muh.config && _muh.config.disableLanguage == true){
+    $('.uni-header li[data-menu1="language"]').hide();
+}
+
+    }
+
+    _muh.render();

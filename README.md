@@ -79,6 +79,19 @@ Ref: _test/withConfig.htm
   - impact
   - account
 
+
+All you need is to add this javascript add edit _muh.config after included the uniheader.js file.
+Ref: _test/withAuth.htm
+```html
+<script src="http://www.mymagic.my/universal-assets/uniheader200.js"></script>
+    <script type="text/javascript">
+      _muh.config.currentUrl = 'http://YOURURL';
+      _muh.config.isLogin = {{Auth::check()}};
+      _muh.render();
+      </script>
+```
+
+
 ### Footer bar
 Including a universal footer is just almost the same with header bar. 
 Except, it expect fontawesome is included. 
