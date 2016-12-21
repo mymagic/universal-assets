@@ -20,10 +20,12 @@
     _muh.config.disableAccount = true;
 	// disable language item (in case the application is monolingual)
     _muh.config.disableLanguage = true;
-	// set current url in case we dont want use javascript auto detection. this will be pass to connect as redirect_uri.
-    _muh.config.currentUrl = 'http://atasbe.mymagic.my';
-	// always remember to call the render() function after done with the setting.
-	_muh.render();
+    // set current url in case we dont want use javascript auto detection. this will be pass to connect.
+    _muh.config.currentUrl = 'http://YOURURL';
+    // check the user AUTH whether is it true or false.
+    _muh.config.isLogin = {{Auth::check()}};
+    // always remember to call the render() function after done with the setting.
+    _muh.render();
 </script>
 
 

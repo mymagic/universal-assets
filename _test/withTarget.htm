@@ -15,6 +15,14 @@
 flash msg...
 <div class="color-bar"></div><div class="uni-header"></div>
 <div class="uni-footer"></div>
-<script src="/magic_uniheader/uniheader.js"></script>
+<script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
+<script type="text/javascript">
+    // set current url in case we dont want use javascript auto detection. this will be pass to connect.
+    _muh.config.currentUrl = 'http://YOURURL';
+    // check the user AUTH whether is it true or false.
+    _muh.config.isLogin = {{Auth::check()}};
+    // always remember to call the render() function after done with the setting.
+    _muh.render();
+</script>
 <script src="/magic_uniheader/unifooter.js"></script>
 </body>

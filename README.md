@@ -30,13 +30,18 @@ Assume you already have the standard Bootstrap v3.3.5 includes (javascript & css
 
 ## How to use
 ### Header bar
-All you need to do is add this javascript file.
+All you need to do is add this javascript file. Please don't forget to the currentURL.
 Ref: _test/withoutTarget.htm
 ```html
 <body style="padding:0; margin:0">
   <!-- add this line -->
-  <script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
-  <!-- /add this line -->
+<script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
+<script type="text/javascript">
+      _muh.config.currentUrl = 'http://YOURURL';
+      _muh.config.isLogin = {{Auth::check()}};
+      _muh.render();
+</script> 
+       <!-- /add this line -->
 </body>
 ```
 
@@ -49,6 +54,11 @@ Ref: _test/withTarget.htm
   <!-- add these line -->
   <div class="color-bar"></div><div class="uni-header"></div>
   <script src="http://www.mymagic.my/universal-assets/uniheader.js"></script>
+  <script type="text/javascript">
+        _muh.config.currentUrl = 'http://YOURURL';
+        _muh.config.isLogin = {{Auth::check()}};
+        _muh.render();
+  </script> 
   <!-- /add these line -->
 </body>
 ```
@@ -62,10 +72,12 @@ Ref: _test/withConfig.htm
     _muh.config.selectedMenu1 = 'accelerator';
 	// disable account dropdown (in case the application using this header havent integrate with connect yet), will just show as a link to connect
     _muh.config.disableAccount = true;
-	// set current url in case we dont want use javascript auto detection. this will be pass to connect as redirect_uri.
-    _muh.config.currentUrl = 'http://atasbe.mymagic.my';
-	// always remember to call the render() function after done with the setting.
-	_muh.render();
+	// set current url in case we dont want use javascript auto detection. this will be pass to connect.
+    _muh.config.currentUrl = 'http://YOURURL';
+    // check the user AUTH whether is it true or false.
+    _muh.config.isLogin = {{Auth::check()}};
+    // always remember to call the render() function after done with the setting.
+    _muh.render();
 </script>
 ```
 
@@ -78,19 +90,6 @@ Ref: _test/withConfig.htm
   - se
   - impact
   - account
-
-
-As the authorization is managed by MaGIC Connect, the _muh.config need to be configured in uniheader.js that passes the variable whether the user in that particular micro-site is login or not.
-Ref: _test/withAuth.htm
-```html
-<script src="http://www.mymagic.my/universal-assets/uniheader200.js"></script>
-    <script type="text/javascript">
-      _muh.config.currentUrl = 'http://YOURURL';
-      _muh.config.isLogin = {{Auth::check()}};
-      _muh.render();
-      </script>
-```
-
 
 ### Footer bar
 Including a universal footer is just almost the same with header bar. 
