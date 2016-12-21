@@ -30,7 +30,7 @@ Assume you already have the standard Bootstrap v3.3.5 includes (javascript & css
 
 ## How to use
 ### Header bar
-All you need to do is add this javascript file. Please don't forget to the currentURL.
+All you need to do is add this javascript file. Please don't forget to edit the currentURL.
 Ref: _test/withoutTarget.htm
 ```html
 <body style="padding:0; margin:0">
