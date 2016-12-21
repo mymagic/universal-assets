@@ -80,7 +80,7 @@ Ref: _test/withConfig.htm
   - account
 
 
-All you need is to add this javascript add edit _muh.config after included the uniheader.js file.
+As the authorization is managed by MaGIC Connect, the _muh.config need to be configured in uniheader.js that passes the variable whether the user in that particular micro-site is login or not.
 Ref: _test/withAuth.htm
 ```html
 <script src="http://www.mymagic.my/universal-assets/uniheader200.js"></script>
