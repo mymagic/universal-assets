@@ -92,9 +92,14 @@ _muh.render =  function()
             <a href=\"//account.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
             </a>\
             <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-                <li><a href=\"//account.mymagic.my/profile\">Profile</a></li>\
-                <li><a href= \"//" + encodeURI(_muh.config.currentUrl) + "/logout\">Logout</a></li>\
-            </ul>\
+                <li><a href=\"//account.mymagic.my/profile\">Profile</a></li>";
+        
+        if(_muh.config.logoutUrl && _muh.config.logoutUrl.length > 0)
+        {
+            bufferLogin += "<li><a href= \"//" + encodeURI(_muh.config.logoutUrl) + "\">Logout</a></li>";
+        }
+
+        bufferLogin += "</ul>\
         </li>";
     }
     else
