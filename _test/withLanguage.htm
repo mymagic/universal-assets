@@ -14,7 +14,7 @@
 <body style="padding:0; margin:0">
 <div class="color-bar"></div><div class="uni-header"></div>
 
-<script src="http://studio/magic_uniheader/uniheader.js.php"></script>
+<script src="/magic_universal/uniheader.js.php"></script>
 <script type="text/javascript">
 	// set the selected top level menu item
     _muh.config.selectedMenu1 = 'accelerator';
@@ -24,14 +24,14 @@
     _muh.config.disableLanguage = false;
     _muh.config.selectedLanguage = 'ms';
     // set current url in case we dont want use javascript auto detection. this will be pass to connect.
-    _muh.config.currentUrl = 'http://YOURURL';
+    _muh.config.currentUrl = '//atasbe.mymagic.my';
     // check the user AUTH whether is it true or false.
-    _muh.config.isLogin = {{Auth::check()}};
+    _muh.config.isLogin = false;
     // always remember to call the render() function after done with the setting.
     _muh.render();
 	_muh.setLanguage('en');
 </script>
 
 <div class="uni-footer"></div>
-<script src="http://studio/magic_uniheader/unifooter.js.php"></script>
+<script src="/magic_universal/unifooter.js.php"></script>
 </body>

@@ -7,12 +7,9 @@
         }
     ],
     "require": {
-        "mymagic/connect": "dev-master#v1.0"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url":  "git@github.com:mymagic/connect-wrapper.git"
-        }
+        
     ]
+    
 }

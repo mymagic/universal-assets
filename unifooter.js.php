@@ -3,6 +3,7 @@ var _muf = _muf || {};
 
 _muf.config = {};
 _muf.config.isDebug = false;
+_muh.config.isLogin = false;
 	
 _muf.checkStyleSheet = function(url)
 {
@@ -74,7 +75,6 @@ _muf.render =  function()
 				<li><a href=\"//jomstartup.mymagic.my\">JomStartup</a></li>\
 				<li><a href=\"//profile.mymagic.my\">Profile</a></li>\
 				<li><a href=\"//atasbe.mymagic.my\">ATAS</a></li>\
-				<li><a href=\"//dashboard.mymagic.my\">Dashboard</a></li>\
 			</ul>\
 		</div>\
 		<div class=\"menu\">\
@@ -103,5 +103,12 @@ _muf.render =  function()
 	</div>"
 	);
 }
+
+window.onbeforeunload = function() {
+    return "You're leaving the site.";
+};
+$(document).ready(function() {
+    $('a[rel!=ext]').click(function() { window.onbeforeunload = null; });
+});
 
 _muf.render();

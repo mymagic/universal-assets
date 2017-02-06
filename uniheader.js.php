@@ -1,8 +1,10 @@
+<?php header('Content-Type: application/javascript'); ?>
 // create namespace _muh (magic universal header)
 var _muh = _muh || {};
 
 _muh.config = {};
 _muh.config.isDebug = false;
+_muh.config.isLogin = false;
 
 _muh.checkStyleSheet = function(url)
 {
@@ -83,6 +85,27 @@ _muh.render =  function()
     {
         $("body").prepend( '<div class="color-bar"></div><div class="uni-header"></div>' );
     }
+
+    if(_muh.config.isLogin)
+    {
+        bufferLogin = "<li class=\"dropdown\" data-menu1=\"account\">\
+            <a href=\"//account.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
+            </a>\
+            <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
+                <li><a href=\"//account.mymagic.my/profile\">Profile</a></li>\
+                <li><a href= \"//" + encodeURI(_muh.config.currentUrl) + "/logout\">Logout</a></li>\
+            </ul>\
+        </li>";
+    }
+    else
+    {
+         bufferLogin = "<li data-menu1=\"account\">\
+            <a href=\"//account.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\">Account</a>\
+        </li>";
+    }
+   
+
+
     $(".uni-header").empty();
     $(".uni-header").prepend("\
 	<div class=\"container\">\
@@ -126,30 +149,13 @@ _muh.render =  function()
 				<a href=\"http://ace.mymagic.my\" data-url-code=\"ace\">ACE</a>\
 			</li>\
 			<li data-menu1=\"impact\">\
-				<a href=\"//impact.mymagic.my\"  data-url-code=\"impact\">Impact</a>\
+				<a href=\"//impact.mymagic.my\" data-url-code=\"impact\">Impact</a>\
 			</li>\
 		  </ul>\
-		 <ul class=\"nav navbar-nav navbar-right border-line\">\
-			<li class=\"dropdown\" data-menu1=\"language\">\
-			</li>\ " + ( !_muh.config.isLogin ?
-
-      "  <li data-menu1=\"account\">\
-					<a href=\"//connect.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\">Account</a>\
-				</li>\ " :
-
- " <li class=\"dropdown\" data-menu1=\"account\">\
-				<a href=\"//connect.mymagic.my/?redirect_uri="+encodeURI(_muh.config.currentUrl)+"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
-				</a>\
-				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-<li>\
-						<a href=\"//connect2.mymagic.my/profile\">Profile</a>\
-    </li>\
-    <li>\
-        <a href= \"//" + encodeURI(_muh.config.currentUrl) + "/logout\">Logout</a>\
-    </li>\
-    </ul>\
-    </li>\
-        " ) + " </ul>\
+          <ul class=\"nav navbar-nav navbar-right border-line\">\
+            <li class=\"dropdown\" data-menu1=\"language\"></li>"+
+            bufferLogin+
+         "</ul>\
     </div>\
     </div>\
     ");
@@ -157,14 +163,16 @@ _muh.render =  function()
     var re = new RegExp("(http:\/\/)?" + window.location.host);
     var currentMenuItem = $("a[href=\'//" + window.location.host + "']");
 
-    if (re.test(currentMenuItem.prop("href"))) {
-    currentMenuItem.parent().addClass("current-menu-item");
-}
+    if (re.test(currentMenuItem.prop("href"))) 
+    {
+        currentMenuItem.parent().addClass("current-menu-item");
+    }
 
-    if(_muh.config && _muh.config.selectedMenu1 != ""){
-    $('.uni-header li').removeClass('current-menu-item');
-    $('.uni-header li[data-menu1="'+_muh.config.selectedMenu1+'"]').addClass('current-menu-item');
-}
+    if(_muh.config && _muh.config.selectedMenu1 != "")
+    {
+        $('.uni-header li').removeClass('current-menu-item');
+        $('.uni-header li[data-menu1="'+_muh.config.selectedMenu1+'"]').addClass('current-menu-item');
+    }
 
     if(_muh.config && _muh.config.disableAccount == true)
     {
@@ -175,10 +183,11 @@ _muh.render =  function()
         $('.uni-header li[data-menu1="account"]').hide();
     }
 
-    if(_muh.config && _muh.config.disableLanguage == true){
-    $('.uni-header li[data-menu1="language"]').hide();
-}
-
+    if(_muh.config && _muh.config.disableLanguage == true)
+    {
+        $('.uni-header li[data-menu1="language"]').hide();
     }
 
-    _muh.render();
+}
+
+_muh.render();
