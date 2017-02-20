@@ -27,8 +27,9 @@ _muh.checkStyleSheet = function(url)
 var urls = [];
 urls['magic'] = []; urls['magic']['default'] = '//www.mymagic.my'; urls['magic']['en'] = '//www.mymagic.my/en'; urls['magic']['ms'] = '//www.mymagic.my/ms';
 urls['accelerator-home'] = []; urls['accelerator-home']['default'] = '//accelerator.mymagic.my'; urls['accelerator-home']['en'] = '//accelerator.mymagic.my/en'; urls['accelerator-home']['ms'] = '//accelerator.mymagic.my/ms';
-urls['accelerator-asean'] = []; urls['accelerator-asean']['default'] = '//accelerator.mymagic.my/asean'; urls['accelerator-asean']['en'] = '//accelerator.mymagic.my/en/asean/'; urls['accelerator-asean']['ms'] = '//accelerator.mymagic.my/ms/asean/';
-urls['accelerator-se'] = []; urls['accelerator-se']['default'] = '//accelerator.mymagic.my/se'; urls['accelerator-se']['en'] = '//accelerator.mymagic.my/en/se/'; urls['accelerator-se']['ms'] = '//accelerator.mymagic.my/ms/se/';
+urls['accelerator-gap'] = []; urls['accelerator-gap']['default'] = '//accelerator.mymagic.my/gap'; urls['accelerator-gap']['en'] = '//accelerator.mymagic.my/en/gap/'; urls['accelerator-gap']['ms'] = '//accelerator.mymagic.my/ms/gap/';
+// urls['accelerator-asean'] = []; urls['accelerator-asean']['default'] = '//accelerator.mymagic.my/asean'; urls['accelerator-asean']['en'] = '//accelerator.mymagic.my/en/asean/'; urls['accelerator-asean']['ms'] = '//accelerator.mymagic.my/ms/asean/';
+// urls['accelerator-se'] = []; urls['accelerator-se']['default'] = '//accelerator.mymagic.my/se'; urls['accelerator-se']['en'] = '//accelerator.mymagic.my/en/se/'; urls['accelerator-se']['ms'] = '//accelerator.mymagic.my/ms/se/';
 urls['accelerator-distroDojo'] = []; urls['accelerator-distroDojo']['default'] = '//accelerator.mymagic.my/distro-dojo'; urls['accelerator-distroDojo']['en'] = '//accelerator.mymagic.my/en/distro-dojo/'; urls['accelerator-distroDojo']['ms'] = '//accelerator.mymagic.my/ms/distro-dojo/';
 urls['global'] = []; urls['global']['default'] = '//global.mymagic.my'; urls['global']['en'] = '//global.mymagic.my/en'; urls['global']['ms'] = '//global.mymagic.my/ms';
 urls['central'] = []; urls['central']['default'] = '//central.mymagic.my'; urls['central']['en'] = '//central.mymagic.my/en'; urls['central']['ms'] = '//central.mymagic.my/ms';
@@ -131,8 +132,7 @@ _muh.render =  function()
 				<a href=\"#\" class=\"dropdown-toggle \" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Accelerator <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span></a>\
 				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
 					<li data-menu2=\"home\"><a href=\"//accelerator.mymagic.my\" data-url-code=\"accelerator-home\">Home</a></li>\
-					<li data-menu2=\"asean\"><a href=\"//accelerator.mymagic.my/en/asean\"  data-url-code=\"accelerator-asean\">ASEAN</a></li>\
-					<li data-menu2=\"se\"><a href=\"//accelerator.mymagic.my/en/se\"  data-url-code=\"accelerator-se\">SE</a></li>\
+					<li data-menu2=\"gap\"><a href=\"//accelerator.mymagic.my/en/gap\"  data-url-code=\"accelerator-gap\">GAP</a></li>\
 					<li data-menu2=\"distroDojo\"><a href=\"//accelerator.mymagic.my/en/distro-dojo\" data-url-code=\"accelerator-distroDojo\">Distro Dojo</a></li>\
 				</ul>\
 			</li>\
