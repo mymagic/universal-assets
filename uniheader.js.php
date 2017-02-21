@@ -5,6 +5,7 @@ var _muh = _muh || {};
 _muh.config = {};
 _muh.config.isDebug = false;
 _muh.config.isLogin = false;
+_muh.config.loginUrl = '//connect.mymagic.my'
 
 _muh.checkStyleSheet = function(url)
 {
@@ -93,8 +94,8 @@ _muh.render =  function()
             <a href=\""+encodeURI(_muh.config.loginUrl)+"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
             </a>\
             <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-                <li><a href=\"//account.mymagic.my/profile\">Profile</a></li>\
-                <li><a href=\"//account.mymagic.my/logout?redirect_uri=" + encodeURI(_muh.config.currentUrl)+ "\">Logout</a></li>\
+                <li><a href=\"//connect.mymagic.my/profile\">Profile</a></li>\
+                <li><a href=\"//connect.mymagic.my/logout?redirect_uri=" + encodeURI(_muh.config.currentUrl)+ "\">Logout</a></li>\
             </ul>\
         </li>";
     }
