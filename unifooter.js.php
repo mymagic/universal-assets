@@ -104,11 +104,11 @@ _muf.render =  function()
 	);
 }
 
-window.onbeforeunload = function() {
+/*window.onbeforeunload = function() {
     return "You're leaving the site.";
 };
 $(document).ready(function() {
     $('a[rel!=ext]').click(function() { window.onbeforeunload = null; });
-});
+});*/
 
 _muf.render();

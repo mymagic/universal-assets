@@ -90,18 +90,18 @@ _muh.render =  function()
     if(_muh.config.isLogin)
     {
         bufferLogin = "<li class=\"dropdown\" data-menu1=\"account\">\
-            <a href=encodeURI(_muh.config.currentLogin) class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
+            <a href=\""+encodeURI(_muh.config.loginUrl)+"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Account <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span>\
             </a>\
             <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
                 <li><a href=\"//account.mymagic.my/profile\">Profile</a></li>\
-                <li><a href= \"//account.mymagic.my/logout?redirect_uri=\" + encodeURI(_muh.config.currentLogout)>Logout</a></li>\
+                <li><a href=\"//account.mymagic.my/logout?redirect_uri=" + encodeURI(_muh.config.currentUrl)+ "\">Logout</a></li>\
             </ul>\
         </li>";
     }
     else
     {
          bufferLogin = "<li data-menu1=\"account\">\
-            <a href=encodeURI(_muh.config.currentLogin)>Account</a>\
+            <a href=\""+encodeURI(_muh.config.loginUrl)+"\">Account</a>\
         </li>";
     }
 

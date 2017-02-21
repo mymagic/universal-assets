@@ -1,0 +1,42 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<body style="padding:0; margin:0">
+<div class="color-bar"></div><div class="uni-header"></div>
+
+<script src="/magic_universal/uniheader.js"></script>
+<script type="text/javascript">
+	// set the selected top level menu item
+    _muh.config.selectedMenu1 = 'accelerator';
+	// disable account dropdown (in case the application using this header havent integrate with connect yet), will just show as a link to connect
+    _muh.config.disableAccount = false;
+	// disable language item (in case the application is monolingual)
+    _muh.config.disableLanguage = false;
+    // set current url in case we dont want use javascript auto detection. this will be pass to connect.
+    _muh.config.currentUrl = '//atasbe.mymagic.my';
+    _muh.config.logoutUrl = '//atasbe.mymagic.my/site/logout';
+    _muh.config.loginUrl = '//connect.mymagic.my';
+    // check the user AUTH whether is it true or false.
+    _muh.config.isLogin = true;
+    // always remember to call the render() function after done with the setting.
+    _muh.render();
+</script>
+
+
+<script src="/magic_universal/unifooter.js"></script>
+<script type="text/javascript">
+	// force to load font awesome from cdn
+	_muf.config.isForceFAEnabled = true
+	// always remember to call the render() function after done with the setting.
+	_muf.render();
+</script>
+
+</body>
