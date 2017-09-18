@@ -1,5 +1,9 @@
 RewriteEngine on
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^uniheader.js$ uniheader.js.php
 RewriteRule ^unifooter.js$ unifooter.js.php
+
+<FilesMatch ".(eot|ttf|otf|woff|woff2)">
+  Header set Access-Control-Allow-Origin "*"
+</FilesMatch>

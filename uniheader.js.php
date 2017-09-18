@@ -1,4 +1,55 @@
-<?php header('Content-Type: application/javascript'); ?>
+<?php header('Content-Type: application/javascript');
+
+$html = '
+<nav class="navbar header__fnav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#TopNav" aria-expanded="false">
+                <i class="icon-down-open-big"></i>
+            </button>
+            <a class="navbar-brand" href="https://mymagic.my/">
+                <svg width="28" height="18">
+                    <symbol id="SmallLogo" class="small_logo" viewBox="0 0 80.5 47.7">
+                        <path class="st0" d="M27,25.1c1.7-1.7,1.9-4,0.8-5.9L12,3.4L11.6,3c-1.8-1.8-3-3-5.8-3C2.5,0,0,2.7,0,6.3v16.4
+                            c0.7,1.7,2.3,3.2,4.4,3.2c2.1,0,3.9-1.2,4.6-3.1v-9.2l12.1,12.1C22.9,26.8,25.3,26.8,27,25.1"/>
+                        <path class="st1" d="M4.4,25.9c-2.1,0-3.7-1.4-4.4-3.2v20.3c0,2.2,1.8,4.6,4.4,4.6c2.6,0,4.6-2,4.6-4.6V22.8
+                            C8.3,24.7,6.6,25.9,4.4,25.9"/>
+                        <path class="st2" d="M53.3,25c-1.7-1.6-1.6-4.1-0.7-5.8L40.2,31.6L27.8,19.2c1.1,1.9,0.8,4.2-0.8,5.9c-1.7,1.7-4.2,1.6-5.9,0.6
+                            L36,40.6c1.2,1.2,2.8,2,4.4,2c1.9,0,3.6-1.5,4.2-2.1l14.7-14.7C57.4,26.9,55,26.7,53.3,25"/>
+                        <path class="st3" d="M75.9,25.9c-2.1,0-3.7-1.4-4.4-3.1v20.3c0,2.6,2,4.6,4.6,4.6c2.6,0,4.4-2.4,4.4-4.6V22.8
+                            C79.7,24.7,78,25.9,75.9,25.9"/>
+                        <path class="st4" d="M75.9,25.9c2.1,0,3.9-1.2,4.6-3.1V6.3c0-3.7-2.3-6.3-5.7-6.3c-2.9,0-4.3,1.4-6.3,3.4L52.6,19.2
+                            c-1,1.8-1,4.2,0.7,5.8c1.7,1.7,4.1,1.9,6,0.8l12.1-12.1v9.1C72.1,24.5,73.7,25.9,75.9,25.9"/>
+                    </symbol>
+                    <use xlink:href="#SmallLogo"/>
+                </svg>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="TopNav">
+            <ul class="nav navbar-nav">
+                <li><a href="https://mymagic.my/about/">About</a></li>
+                <li><a href="https://mymagic.my/programs/">Programs</a></li>
+                <li><a href="https://mymagic.my/events/?fwp_event_date=upcoming">Events</a></li>
+                <li><a href="https://mymagic.my/community/">Community</a></li>
+                <li><a href="https://mymagic.my/courses/?fwp_course_date=upcoming">Courses</a></li>
+                <li><a href="http://resource.mymagic.my/#sthash.ETSyAo9e.dpbs">Resources</a></li>
+                <li><a href="https://mymagic.my/news/">News</a></li>
+                <li><a href="http://central.mymagic.my/">Central</a></li>
+                <li><a href="https://mymagic.my/publications/">Publications</a></li>
+                <li><a href="http://ace.mymagic.my/">ACE</a></li>
+                <li class="hidden"><a href="http://impact.mymagic.my/">Impact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://mymagic.my/jobs/">Jobs</a></li>
+                <li><a href="https://mymagic.my/contact/">Contact</a></li>
+                <li><a href="http://connect.mymagic.my/"><i class="icon-key"></i> My Account</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>';
+
+$html_clean = json_encode($html);
+?>
 // create namespace _muh (magic universal header)
 var _muh = _muh || {};
 
@@ -17,8 +68,8 @@ _muh.checkStyleSheet = function(url)
         }
     }
     if(!found){
-        $('head').append(
-            $('<link rel="stylesheet" type="text/css" href="' + url + '" />')
+        jQuery('head').append(
+            jQuery('<link rel="stylesheet" type="text/css" href="' + url + '" />')
         );
     }
 }
@@ -45,7 +96,7 @@ _muh.setLanguage = function(lang)
     for (var urlKey in _muh.urls)
     {
         var url = urls[lang];
-        $(".uni-header").find('a[data-url-code="'+urlKey+'"]').prop('href', _muh.urls[urlKey][lang]);
+        jQuery(".uni-header").find('a[data-url-code="'+urlKey+'"]').prop('href', _muh.urls[urlKey][lang]);
     }
 
     var langMenuHtml = '<a href=\"//www.mymagic.my/en\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">\
@@ -65,7 +116,7 @@ _muh.setLanguage = function(lang)
 		</ul>';
     }
 
-    $('.uni-header').find('li[data-menu1="language"]').html(langMenuHtml);
+    jQuery('.uni-header').find('li[data-menu1="language"]').html(langMenuHtml);
 }
 
 _muh.render =  function()
@@ -79,15 +130,17 @@ _muh.render =  function()
     }
     else
     {
-        _muh.checkStyleSheet('//www.mymagic.my/universal-assets/css/universal-style.css');
+        _muh.checkStyleSheet('//mymagic.my/universal-assets/css/universal-style.css?t=1496135000');
+        _muh.checkStyleSheet('../css/universal-style.css?t=1496135000');
+
     }
 
     // auto create color-bar and uni-header if tag not found
-    if( !$('.color-bar').length && !$('.uni-header').length )
+    if( !jQuery('.color-bar').length && !jQuery('.uni-header').length )
     {
-        $("body").prepend( '<div class="color-bar"></div><div class="uni-header"></div>' );
+        jQuery("body").prepend( '<div class="color-bar"></div><div class="uni-header"></div>' );
     }
-
+    /*
     if(_muh.config.isLogin)
     {
         bufferLogin = "<li class=\"dropdown\" data-menu1=\"account\">\
@@ -104,65 +157,15 @@ _muh.render =  function()
          bufferLogin = "<li data-menu1=\"account\">\
             <a href=\""+encodeURI(_muh.config.loginUrl)+"\">Account</a>\
         </li>";
-    }
+    }*/
 
 
 
-    $(".uni-header").empty();
-    $(".uni-header").prepend("\
-	<div class=\"container\">\
-		<div class=\"navbar-header\">\
-			<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#uni-header-collapse\">\
-				<span class=\"sr-only\">Toggle navigation</span>\
-				<span class=\"icon-bar\"></span>\
-				<span class=\"icon-bar\"></span>\
-				<span class=\"icon-bar\"></span>\
-			</button>\
-		</div>\
-		<div class=\"collapse navbar-collapse\" id=\"uni-header-collapse\">\
-		<ul class=\"nav navbar-nav\">\
-			<li data-menu1=\"magic\">\
-				<a href=\"//www.mymagic.my\" data-url-code=\"magic\">\
-				<span class=\"glyphicon glyphicon-home\"></span> MaGIC\
-				</a>\
-			</li>\
-			<li data-menu1=\"academy\">\
-				<a href=\"//academy.mymagic.my\" data-url-code=\"academy\">Academy</a>\
-			</li>\
-			<li class=\"dropdown\" data-menu1=\"accelerator\">\
-				<a href=\"#\" class=\"dropdown-toggle \" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Accelerator <span class=\"glyphicon glyphicon-triangle-bottom\" aria-hidden=\"true\"></span></a>\
-				<ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"Child Item\">\
-					<li data-menu2=\"home\"><a href=\"//accelerator.mymagic.my\" data-url-code=\"accelerator-home\">Home</a></li>\
-					<li data-menu2=\"gap\"><a href=\"//accelerator.mymagic.my/en/gap\"  data-url-code=\"accelerator-gap\">GAP</a></li>\
-					<li data-menu2=\"distroDojo\"><a href=\"//accelerator.mymagic.my/en/distro-dojo\" data-url-code=\"accelerator-distroDojo\">Distro Dojo</a></li>\
-				</ul>\
-			</li>\
-			<li data-menu1=\"global\">\
-				<a href=\"//global.mymagic.my\" data-url-code=\"global\">Global</a>\
-			</li>\
-			<li data-menu1=\"central\">\
-				<a href=\"//central.mymagic.my\" data-url-code=\"central\">Central</a>\
-			</li>\
-			<li data-menu1=\"se\">\
-				<a href=\"//se.mymagic.my\" data-url-code=\"se\">SE</a>\
-			</li>\
-			<li data-menu1=\"ACE\">\
-				<a href=\"http://ace.mymagic.my\" data-url-code=\"ace\">ACE</a>\
-			</li>\
-			<li data-menu1=\"impact\">\
-				<a href=\"//impact.mymagic.my\" data-url-code=\"impact\">Impact</a>\
-			</li>\
-		  </ul>\
-          <ul class=\"nav navbar-nav navbar-right border-line\">\
-            <li class=\"dropdown\" data-menu1=\"language\"></li>"+
-            bufferLogin+
-         "</ul>\
-    </div>\
-    </div>\
-    ");
+    jQuery(".uni-header").empty();
+    jQuery(".uni-header").prepend(<?php echo $html_clean ?>);
 
     var re = new RegExp("(http:\/\/)?" + window.location.host);
-    var currentMenuItem = $("a[href=\'//" + window.location.host + "']");
+    var currentMenuItem = jQuery("a[href=\'//" + window.location.host + "']");
 
     if (re.test(currentMenuItem.prop("href")))
     {
@@ -171,24 +174,33 @@ _muh.render =  function()
 
     if(_muh.config && _muh.config.selectedMenu1 != "")
     {
-        $('.uni-header li').removeClass('current-menu-item');
-        $('.uni-header li[data-menu1="'+_muh.config.selectedMenu1+'"]').addClass('current-menu-item');
+        jQuery('.uni-header li').removeClass('current-menu-item');
+        jQuery('.uni-header li[data-menu1="'+_muh.config.selectedMenu1+'"]').addClass('current-menu-item');
     }
 
     if(_muh.config && _muh.config.disableAccount == true)
     {
-        $('.uni-header li[data-menu1="account"]').removeClass('dropdown');
-        $('.uni-header li[data-menu1="account"] a').removeClass('dropdown-toggle').removeAttr('data-toggle');
-        $('.uni-header li[data-menu1="account"] span.glyphicon').hide();
-        $('.uni-header li[data-menu1="account"] ul').hide();
-        $('.uni-header li[data-menu1="account"]').hide();
+        jQuery('.uni-header li[data-menu1="account"]').removeClass('dropdown');
+        jQuery('.uni-header li[data-menu1="account"] a').removeClass('dropdown-toggle').removeAttr('data-toggle');
+        jQuery('.uni-header li[data-menu1="account"] span.glyphicon').hide();
+        jQuery('.uni-header li[data-menu1="account"] ul').hide();
+        jQuery('.uni-header li[data-menu1="account"]').hide();
     }
 
     if(_muh.config && _muh.config.disableLanguage == true)
     {
-        $('.uni-header li[data-menu1="language"]').hide();
+        jQuery('.uni-header li[data-menu1="language"]').hide();
     }
 
 }
 
 _muh.render();
+
+(function(d) {
+var config = {
+  kitId: 'ces4fvp',
+  scriptTimeout: 3000,
+  async: true
+},
+h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+})(document);
